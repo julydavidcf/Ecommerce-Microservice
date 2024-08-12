@@ -4,11 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c41a752-70d0-4fc8-bebb-1f519b5689b7" name="Changes" comment="" />
+    <list default="true" id="6c41a752-70d0-4fc8-bebb-1f519b5689b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/Controller/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/Dao/ItemsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/Entity/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/Payload/ItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/Service/Implimentation/ItemServiceImpli.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/Service/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/src/main/java/com/example/ecomerse/EcomerseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/main/java/com/example/ecomerse/EcomerseApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecomerse/src/test/java/com/example/ecomerse/EcomerseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ECommerce/ItemService/src/test/java/com/example/ecomerse/EcomerseApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,12 +65,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.ecomerse [clean].executor": "Run",
+    "Maven.ecomerse [compile].executor": "Run",
+    "Maven.ecomerse [validate].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.EcomerseApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "hongqiang-811",
     "jdk.selected.JAVA_MODULE": "22",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/15063/OneDrive/Documents/Chuwa/FinalProject/ecomerse",
+    "last_opened_file_path": "C:/Users/15063/OneDrive/Documents/Chuwa/FinalProject/ECommerce/ItemService",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,10 +92,13 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\15063\OneDrive\Documents\Chuwa\FinalProject" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\15063\OneDrive\Documents\Chuwa\FinalProject\ECommerce" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="EcomerseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ecomerse" />
+      <module name="ItemService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ecomerse.EcomerseApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723436728042</updated>
       <workItem from="1723436729174" duration="343000" />
-      <workItem from="1723437084235" duration="332000" />
+      <workItem from="1723437084235" duration="8469000" />
     </task>
     <servers />
   </component>
