@@ -13,6 +13,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ecomerse" target="17" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
