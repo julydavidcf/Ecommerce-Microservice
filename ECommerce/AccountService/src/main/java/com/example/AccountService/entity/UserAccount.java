@@ -19,16 +19,16 @@ public class UserAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "username", nullable = false)
+    @Column(name = "username")
     private String username;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "shipping_address", nullable = false)
+    @Column(name = "shipping_address")
     private String shippingAddress;
 
     @Column(name = "billing_address")
@@ -38,11 +38,11 @@ public class UserAccount {
     private String paymentMethod;
 
     @CreatedDate
-    @Column(name = "create_time", nullable = false, updatable = false)
+    //@Column(name = "create_time")
     private LocalDateTime createTime;
 
     @UpdateTimestamp
-    @Column(name = "update_date_time", nullable = false)
+    //@Column(name = "update_date_time")
     private LocalDateTime updateDateTime;
 
     public UserAccount() {

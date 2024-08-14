@@ -29,16 +29,11 @@ public class UserAccountService {
         return userAccountRepository.findByEmail(email).map(UserAccountDto::fromEntity);
     }
 
-    public Optional<UserAccountDto> updateAccount(Long id, UserAccountDto UserAccountDto, String password) {
+    public Optional<UserAccountDto> updateAccountPassword(Long id, String password) {
         Optional<UserAccount> existingAccountOpt = userAccountRepository.findById(id);
 
         if (existingAccountOpt.isPresent()) {
             UserAccount existingAccount = existingAccountOpt.get();
-            existingAccount.setEmail(UserAccountDto.getEmail());
-            existingAccount.setUsername(UserAccountDto.getUsername());
-            existingAccount.setShippingAddress(UserAccountDto.getShippingAddress());
-            existingAccount.setBillingAddress(UserAccountDto.getBillingAddress());
-            existingAccount.setPaymentMethod(UserAccountDto.getPaymentMethod());
             if (password != null && !password.isEmpty()) {
                 existingAccount.setPassword(password); // Update password if provided
             }

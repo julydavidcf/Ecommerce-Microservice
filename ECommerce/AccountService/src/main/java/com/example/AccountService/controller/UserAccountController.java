@@ -15,8 +15,8 @@ public class UserAccountController {
     @Autowired
     private UserAccountService userAccountService;
 
-    @PostMapping("/create")
-    public ResponseEntity<UserAccountDto> createAccount(@RequestBody UserAccountDto UserAccountDto, @RequestParam String password) {
+    @PostMapping("")
+    public ResponseEntity<UserAccountDto> createAccount(@RequestBody UserAccountDto UserAccountDto) {
         UserAccountDto createdAccount = userAccountService.createAccount(UserAccountDto);
         return ResponseEntity.ok(createdAccount);
     }
@@ -33,13 +33,13 @@ public class UserAccountController {
         return accountOpt.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<UserAccountDto> updateAccount(@PathVariable Long id, @RequestBody UserAccountDto userAccountDTO, @RequestParam(required = false) String password) {
-        Optional<UserAccountDto> updatedAccountOpt = userAccountService.updateAccount(id, userAccountDTO, password);
+    @PutMapping("/{id}")
+    public ResponseEntity<UserAccountDto> updateAccount(@PathVariable Long id, @RequestParam(required = false) String password) {
+        Optional<UserAccountDto> updatedAccountOpt = userAccountService.updateAccountPassword(id, password);
         return updatedAccountOpt.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteAccount(@PathVariable Long id) {
         userAccountService.deleteAccount(id);
         return ResponseEntity.noContent().build();
