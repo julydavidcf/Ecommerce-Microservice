@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/ECommerce/ItemService/untitled/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/ecomerse/untitled/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -13,12 +13,14 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ecomerse" target="17" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ItemService" options="-parameters" />
+      <module name="ecomerse" options="-parameters" />
     </option>
   </component>
 </project>
