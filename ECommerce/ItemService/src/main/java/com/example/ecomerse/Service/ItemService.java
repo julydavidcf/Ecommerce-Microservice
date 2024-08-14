@@ -9,14 +9,14 @@ public interface ItemService {
 
     List<ItemDTO> getAllItems();
 
-    ItemDTO getItemById(int id);
+    ItemDTO getItemById(String id);
 
-    void deleteItem(int id);
+    void deleteItem(String id);
 
-    ItemDTO updateInventory(long id, int units);
+    ItemDTO updateInventory(String id, int units);
 
     List<ItemDTO> getItemsByCategory(String category);
 
-    public boolean checkInventory(Long itemId);
+    public boolean checkInventory(String itemId);
 
 }
