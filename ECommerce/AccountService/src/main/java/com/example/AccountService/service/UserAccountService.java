@@ -47,5 +47,10 @@ public class UserAccountService {
     public void deleteAccount(Long id) {
         userAccountRepository.deleteById(id);
     }
+
+    public boolean verifyPassword(String rawPassword, String storedPassword) {
+        // Directly compare the raw password with the stored password
+        return rawPassword.equals(storedPassword);
+    }
 }
 
