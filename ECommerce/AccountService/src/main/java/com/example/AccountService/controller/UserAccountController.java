@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -57,7 +58,7 @@ public class UserAccountController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserAccountDto loginDto) {
+    public ResponseEntity<Map<String, Object>> login(@RequestBody UserAccountDto loginDto) {
         Optional<UserAccountDto> accountOpt = userAccountService.getAccountByEmail(loginDto.getEmail());
 
         if (accountOpt.isPresent()) {
@@ -65,16 +66,27 @@ public class UserAccountController {
 
             // Verify the plaintext password
             if (userAccountService.verifyPassword(loginDto.getPassword(), account.getPassword())) {
-                // Authentication successful
-                return ResponseEntity.ok("Login successful");
+                // Authentication successful, return user information in JSON format
+                Map<String, Object> responseBody = new HashMap<>();
+                responseBody.put("message", "Login successful");
+                responseBody.put("user", account); // Assuming UserAccountDto contains user details
+
+                return ResponseEntity.ok(responseBody);
             } else {
                 // Incorrect password
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+                Map<String, Object> responseBody = new HashMap<>();
+                responseBody.put("message", "Invalid credentials");
+
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
             }
         } else {
             // Account not found
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Account not found");
+            Map<String, Object> responseBody = new HashMap<>();
+            responseBody.put("message", "Account not found");
+
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseBody);
         }
     }
+
 }
 
