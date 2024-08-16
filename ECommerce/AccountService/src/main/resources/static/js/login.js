@@ -14,11 +14,15 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         body: JSON.stringify(data),
     });
 
-    const result = await response.text();
+    const result = await response.json(); // Assuming the API returns user data as JSON
     if (response.ok) {
-        alert(result); // Typically, you'd handle a token or session here
-        window.location.href = 'index.html'; // Redirect to the main page
+        // Extract userId and username from the response
+        const userId = result.user.id;
+        const userName = result.user.username;
+
+        // Redirect to the item list page with userId and username as query parameters
+        window.location.href = `http://localhost:8080/itemList.html?userId=${encodeURIComponent(userId)}&userName=${encodeURIComponent(userName)}`;
     } else {
-        document.getElementById('loginMessage').innerText = 'Login failed: ' + result;
+        document.getElementById('loginMessage').innerText = 'Login failed: ' + result.message;
     }
 });

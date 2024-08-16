@@ -15,7 +15,7 @@ import java.util.List;
 public class OrderController {
     @Autowired
     private OrderService orderService;
-
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping
     public ResponseEntity<OrderDTO> createOrder(@RequestBody OrderDTO orderDTO) {
         OrderDTO response = orderService.createOrder(orderDTO);
