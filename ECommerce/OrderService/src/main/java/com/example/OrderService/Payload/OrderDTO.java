@@ -11,8 +11,8 @@ public class OrderDTO {
     private List<String> itemIds;
     private BigDecimal totalAmount;
     private String status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+/*    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;*/
 
     public String getOrderId() {
         return orderId;
@@ -54,6 +54,7 @@ public class OrderDTO {
         this.status = status;
     }
 
+/*
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -69,6 +70,7 @@ public class OrderDTO {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+*/
 
     // Getters and Setters
 }

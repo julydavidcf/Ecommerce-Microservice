@@ -4,6 +4,8 @@ import com.example.OrderService.Dao.OrderRepository;
 import com.example.OrderService.Entity.Order;
 import com.example.OrderService.Payload.OrderDTO;
 import com.example.OrderService.Service.OrderKafkaProducerService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ public class OrderService {
     @Autowired
     private OrderKafkaProducerService kafkaProducerService;
 
+
     public OrderDTO createOrder(OrderDTO orderDTO) {
         Order order = new Order();
         //order.setOrderId(UUID.randomUUID());
@@ -30,10 +33,12 @@ public class OrderService {
         order.setCreatedAt(LocalDateTime.now());
         order.setUpdatedAt(LocalDateTime.now());
 
-        Order savedOrder = orderRepository.save(order);
-        kafkaProducerService.sendMessage(savedOrder.toString());
+        OrderDTO savedOrder = convertToDTO(orderRepository.save(order));
 
-        return convertToDTO(savedOrder);
+        //String orderJson = objectMapper.writeValueAsString(savedOrder);
+        kafkaProducerService.sendMessage(savedOrder);
+
+        return savedOrder;
     }
     public OrderDTO getOrderById(String orderId) {
         Order order = orderRepository.findOrderByOrderId(orderId);
@@ -51,7 +56,7 @@ public class OrderService {
 
     public void deleteOrderById(String orderId) {
         orderRepository.deleteOrderByOrderId(orderId);
-        kafkaProducerService.sendMessage("Order Deleted: " + orderId.toString());
+        //kafkaProducerService.sendMessage("Order Deleted: " + orderId.toString());
     }
 
     public OrderDTO updateOrderStatus(String orderId, String newStatus) {
@@ -60,7 +65,6 @@ public class OrderService {
         order.setUpdatedAt(LocalDateTime.now());
 
         Order updatedOrder = orderRepository.save(order);
-        kafkaProducerService.sendMessage("Order Status Updated: " + updatedOrder.toString());
 
         return convertToDTO(updatedOrder);
     }
@@ -72,8 +76,8 @@ public class OrderService {
         orderDTO.setItemIds(order.getItemIds());
         orderDTO.setTotalAmount(order.getTotalAmount());
         orderDTO.setStatus(order.getStatus());
-        orderDTO.setCreatedAt(order.getCreatedAt());
-        orderDTO.setUpdatedAt(order.getUpdatedAt());
+/*        orderDTO.setCreatedAt(order.getCreatedAt());
+        orderDTO.setUpdatedAt(order.getUpdatedAt());*/
         return orderDTO;
     }
 }
