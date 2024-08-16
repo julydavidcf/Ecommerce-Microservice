@@ -17,6 +17,6 @@ public interface ItemService {
 
     List<ItemDTO> getItemsByCategory(String category);
 
-    boolean checkInventory(String itemId);
+    boolean checkInventory(String itemId,int requestAmount);
 
 }

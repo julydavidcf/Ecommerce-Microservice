@@ -81,9 +81,9 @@ public class ItemServiceImpli implements ItemService {
     }
 
     @Override
-    public boolean checkInventory(String itemId) {
+    public boolean checkInventory(String itemId, int requestAmount) {
         Item item = this.itemsRepository.findItemByItemId(itemId);
-        return item!=null && item.getAvailableUnits() > 0;
+        return item!=null && item.getAvailableUnits() >= requestAmount;
     }
 
     private ItemDTO itemToItemDTO(Item item) {

@@ -42,8 +42,8 @@ public class ItemController {
     }
 
     @GetMapping("/{id}/inventory")
-    public ResponseEntity<Boolean> checkInventory(@PathVariable(name = "id") String id) {
-        boolean response = this.itemService.checkInventory(id);
+    public ResponseEntity<Boolean> checkInventory(@PathVariable(name = "id") String id,@RequestParam int requestAmount) {
+        boolean response = this.itemService.checkInventory(id,requestAmount);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
