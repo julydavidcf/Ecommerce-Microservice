@@ -26,6 +26,7 @@ public class PaymentConroller {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/user/{userId}")
     public ResponseEntity<Payment> getPaymentByID(@PathVariable String userId) {
         Payment response = paymentService.getPaymentByUserId(userId);
@@ -36,7 +37,7 @@ public class PaymentConroller {
         List<Payment> response = paymentService.getAllOrders();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
+    @CrossOrigin(origins = "http://localhost:8080")
     @PutMapping("/user/{userId}")
     public ResponseEntity<Payment> addPaymentAmount(@PathVariable String userId, @RequestParam BigDecimal addAmount) {
         Payment response = paymentService.addPaymentAmount(userId,addAmount);

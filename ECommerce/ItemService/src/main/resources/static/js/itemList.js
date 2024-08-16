@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const userInfoDiv = document.getElementById('userInfo');
         userInfoDiv.innerHTML = `
             <p>Welcome, ${username}!</p>
-            <p>Your User ID: ${userId}</p>
         `;
     } else {
         console.error('User information not found in the URL');
@@ -32,7 +31,7 @@ async function fetchItems(userId, userName) {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <img src="${item.imageUrl}" alt="${item.name}" width="120" height="auto">
-                    <strong>${item.name}</strong> - Inventory: ${item.availableUnits}
+                    <strong>${item.name}</strong> - Price: $ ${item.price}
                     <a href="itemDetails.html?id=${item.itemId}&userId=${encodeURIComponent(userId)}&userName=${encodeURIComponent(userName)}">View Details</a>
                 `;
                 itemList.appendChild(listItem);
