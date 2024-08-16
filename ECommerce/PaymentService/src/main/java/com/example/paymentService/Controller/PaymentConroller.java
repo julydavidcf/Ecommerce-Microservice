@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,6 +19,7 @@ public class PaymentConroller {
     @Autowired
     private PaymentService paymentService;
 
+    @CrossOrigin(origins = "http://localhost:8083")
     @PostMapping
     public ResponseEntity<Payment> createOrder(@RequestBody Payment payment) {
         Payment response = paymentService.createPayment(payment);
