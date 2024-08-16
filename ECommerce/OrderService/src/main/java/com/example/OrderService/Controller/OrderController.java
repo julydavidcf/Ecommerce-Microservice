@@ -46,7 +46,7 @@ public class OrderController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PatchMapping("/{orderId}/status")
+    @PutMapping("/{orderId}/status")
     public ResponseEntity<OrderDTO> updateOrderStatus(@PathVariable String orderId, @RequestParam String status) {
         OrderDTO response = orderService.updateOrderStatus(orderId, status);
         return new ResponseEntity<>(response, HttpStatus.OK);
