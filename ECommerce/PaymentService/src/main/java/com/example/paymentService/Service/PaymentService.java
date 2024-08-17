@@ -88,7 +88,7 @@ public class PaymentService {
             }
         } else {
             // Update order status to FAILED if payment info is not found
-            updateOrderStatus(orderDTO.getOrderId(), "NotFound");
+            updateOrderStatus(orderDTO.getOrderId(), "FAILED");
         }
     }
 
